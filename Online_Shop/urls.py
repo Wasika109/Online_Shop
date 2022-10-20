@@ -19,11 +19,11 @@ import demo.views as demo_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',demo_views.home_view),
-    path('about/',demo_views.about_view),
-    path('products/',demo_views.product_view),
-    path('cart/',demo_views.cart_view),
-    path('reviews/',demo_views.reviews_view),
-    path('drop_ideas/',demo_views.drop_idea_view),
+    path('home/', demo_views.home_page, name='home'),
+    path('about/', demo_views.about_page, name='about'),
+    path('products/', demo_views.product_page, name='products'),
+    path('cart/', demo_views.cart_page, name='cart'),
+    path('reviews/', demo_views.reviews_page, name='reviews'),
+    path('drop_ideas/', demo_views.drop_ideas_page, name='drop_ideas'),
 
 ]
