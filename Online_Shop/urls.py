@@ -20,6 +20,7 @@ import demo.views as demo_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', demo_views.home_page, name='home'),
+    path('', demo_views.home_page, name='home'),
     path('about/', demo_views.about_page, name='about'),
     path('products/', demo_views.product_page, name='products'),
     path('cart/', demo_views.cart_page, name='cart'),
