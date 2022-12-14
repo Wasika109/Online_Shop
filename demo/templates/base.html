@@ -48,6 +48,15 @@ body {
   <a href="{% url 'cart' %}">Cart</a>
   <a href="{% url 'products' %}">Products</a>
   <a href="{% url 'about' %}">About</a>
+  <a href="{% url 'login' %}">Login</a>
+  <p text-align: center>
+  <form class="d-flex">
+        <input class="form-control me-1" type="search" placeholder="Search" align="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+  </p>
+
+
 </div>
 
 <div style="padding-left:16px">
@@ -55,6 +64,7 @@ body {
 
   {% endblock content %}
 </div>
+
 
 </body>
 </html>

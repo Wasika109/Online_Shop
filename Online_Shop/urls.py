@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import demo.views as demo_views
+from demo import views as demo_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,10 @@ urlpatterns = [
     path('cart/', demo_views.cart_page, name='cart'),
     path('reviews/', demo_views.reviews_page, name='reviews'),
     path('drop_ideas/', demo_views.drop_ideas_page, name='drop_ideas'),
+    path('login/', demo_views.login_page, name='login'),
+    path('registration/', demo_views.registration_page, name='register'),
+
+
+
 
 ]

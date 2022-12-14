@@ -5,5 +5,35 @@ products
 {% endblock title %}
 
 {% block content %}
-  <h1 align="center"> This is products page</h1>
+<!--  <h1 align="center"> This is products page</h1>-->
+{% load static %}
+<html>
+      <head>
+
+       </head>
+       <body style="background-color:orange">
+             <h1>PRODUCTS: </h1>
+             <h2>Home decor</h2><br>
+             <img src="{% static 'homedecor1.jpg' %}" height="200" width="200" title="CODE:201,PRICE:1500"/>
+             <img src="{% static 'homedecor2.jpg' %}" height="200" width="200" title="CODE:202,PRICE:1000"/>
+             <img src="{% static 'homedecor5.jpg' %}" height="200" width="200"  title="CODE:203,PRICE:700"/>
+             <img src="{% static 'homedecor3.jpg' %}" height="200" width="200"  title="CODE:204,PRICE:900"/>
+             <img src="{% static 'homedecor4.jpg' %}" height="200" width="200"  title="CODE:201,PRICE:1000"/>
+             <h3>Accessories</h3>
+             <img src="{% static 'homedecor1.jpg' %}" height="200" width="200"  title="CODE:301,PRICE:300"/>
+             <img src="{% static 'homedecor2.jpg' %}" height="200" width="200"  title="CODE:302,PRICE:400"/>
+             <img src="{% static 'homedecor5.jpg' %}" height="200" width="200" title="CODE:303,PRICE:350"/>
+             <img src="{% static 'homedecor4.jpg' %}" height="200" width="200" title="CODE:304,PRICE:500"/>
+             <img src="{% static 'homedecor3.jpg' %}" height="200" width="200" title="CODE:305,PRICE:450"/>
+
+             <h3>Dresses</h3>
+             <img src="{% static 'homedecor1.jpg' %}" height="200" width="200" title="CODE:401,PRICE:3000"/>
+             <img src="{% static 'homedecor2.jpg' %}" height="200" width="200" title="CODE:402,PRICE:2000"/>
+             <img src="{% static 'homedecor5.jpg' %}" height="200" width="200" title="CODE:404,PRICE:2500"/>
+             <img src="{% static 'homedecor3.jpg' %}" height="200" width="200" title="CODE:405,PRICE:3500"/>
+
+
+
+         </body>
+</html>
   {% endblock content %}

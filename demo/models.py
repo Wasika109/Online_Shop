@@ -1,36 +1,41 @@
 from django.db import models
 
 
+
 # Create your models here.
 
-class user_upload(models.Model):
-    user_id = models.IntegerField()
-    user_image = models.ImageField()
+class user(models.Model):
+    user_id=models.IntegerField(primary_key=True)
+    user_name=models.CharField(max_length=25)
+    user_image=models.ImageField()
+    user_contact=models.IntegerField()
 
 
-class log_in(models.Model):
-    user_name = models.CharField(max_length=25)
-    user_password = models.CharField(max_length=25)
-    user_email = models.CharField(max_length=25)
-
+class customer(models.Model):
+     customer_id = models.IntegerField(primary_key=True)
+     customer_name = models.CharField(max_length=200, null=True)
+     customer_image = models.ImageField()
+     customer_phone = models.IntegerField()
+     customer_address = models.CharField(max_length=50, null=True)
 
 class customer_product(models.Model):
-    c_product_title = models.CharField(max_length=25)
-    c_product_image = models.ImageField()
-    c_product_cost = models.FloatField()
-    user_id = models.IntegerField()
+   # product = models.ForeignKey(product, on_delete=models.CASCADE)
+    customer_product_title = models.CharField(max_length=25)
+    customer_product_image = models.ImageField()
+    customer_product_cost = models.FloatField()
+    customer_product_discount = models.FloatField()
+    user = models.ForeignKey(user, on_delete=models.CASCADE)
 
 
 class cart(models.Model):
-    order_id = models.IntegerField()
-    product_title = models.CharField(max_length=25)
-    size = models.CharField(max_length=25)
-    quantity = models.IntegerField()
-    total_bill = models.FloatField()
+    cart_id = models.IntegerField(primary_key=True)
+    cart_status = models.CharField(max_length=25)
+    date = models.CharField(max_length=25)
+    total_price = models.FloatField()
 
 
 class product(models.Model):
-    product_id = models.IntegerField()
+    product_id = models.IntegerField(primary_key=True)
     product_name = models.CharField(max_length=25)
     product_image = models.ImageField()
     product_price = models.FloatField()
@@ -43,9 +48,15 @@ class category(models.Model):
 
 
 class order(models.Model):
-    order_id = models.IntegerField()
-    user_name = models.CharField(max_length=25)
-    user_id = models.IntegerField()
-    user_contact = models.IntegerField()
-    address = models.CharField(max_length=25)
+    order_id = models.IntegerField(primary_key=True)
+    cart = models.ForeignKey(cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(product, on_delete=models.CASCADE)
+    total_amount = models.IntegerField()
+    total_cost = models.FloatField()
+    customer_name = models.CharField(max_length=25)
+    customer = models.ForeignKey(customer, on_delete=models.CASCADE)
+    customer_phone = models.IntegerField()
+    customer_address = models.CharField(max_length=25)
     city = models.CharField(max_length=25)
+
+
